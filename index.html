@@ -4,50 +4,54 @@
   <meta charset="UTF-8">
   <title>HelloTommorow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Import Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: Inter, Arial, sans-serif;
+      font-family: 'Poppins', Arial, sans-serif;
       background: #000;
       color: #fff;
       text-align: center;
     }
-    header {
-      padding: 80px 20px;
-    }
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-    }
-    p {
-      max-width: 600px;
-      margin: 20px auto;
-      opacity: 0.8;
-    }
-    .cta {
-      margin-top: 40px;
-    }
-    .cta a {
-      color: #000;
-      background: #fff;
-      padding: 14px 30px;
-      text-decoration: none;
-      font-weight: 600;
-    }
- <head>
-  <style>
+
     .site-header {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
+      padding: 0 20px;
     }
 
     .logo {
       max-width: 360px;
       margin-bottom: 40px;
     }
+
+    /* Style the paragraph text */
+    .site-header p {
+      font-size: 28px;
+      line-height: 1.5;
+      color: #fff; /* white text on black background */
+      margin: 0;
+      max-width: 700px;
+    }
+
+    /* Make parts of the text bold or lighter */
+    .site-header p .bold {
+      font-weight: 700;
+    }
+
+    .site-header p .light {
+      font-weight: 400;
+    }
+
+    /* Remove old CTA styles completely */
+    /* .cta { display: none; } */
   </style>
 </head>
 
@@ -56,13 +60,10 @@
   <header class="site-header">
     <img src="8.png" alt="HELLOTOMMOROW logo" class="logo">
 
-    <p>Building tomorrow through innovation, impact, and purpose.</p>
-
-    <div class="cta">
-      <a href="#csi">Our Impact</a>
-    </div>
+    <p>
+      <span class="bold">Building tomorrow</span> <span class="light">through innovation, impact, and purpose.</span>
+    </p>
   </header>
 
 </body>
 </html>
-
