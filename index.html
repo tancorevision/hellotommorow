@@ -1,75 +1,547 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>HelloTommorow</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Import Poppins font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelloTommorow | Energy & Water Efficiency</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script>window.ACTIVE_PAGE = 'index.html';</script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', Arial, sans-serif;
-      background: #000;
-      color: #fff;
-      text-align: center;
+    .hero {
+      background-color: var(--deep-brown);
+      position: relative; overflow: hidden;
+      min-height: 92vh; display: flex; align-items: center;
     }
-
-    .site-header {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
+    .hero::before {
+      content:''; position:absolute; inset:0;
+      background-image: radial-gradient(circle, rgba(201,168,76,0.18) 1px, transparent 1px);
+      background-size: 28px 28px; pointer-events:none;
     }
-
-    .logo {
-      max-width: 360px;
-      margin-bottom: 40px;
+    .hero-circle {
+      position:absolute; right:-180px; top:-120px;
+      width:700px; height:700px; border-radius:50%;
+      border:1.5px solid rgba(201,168,76,0.12);
     }
-
-    /* Style the paragraph text */
-    .site-header p {
-      font-size: 28px;
-      line-height: 1.5;
-      color: #fff; /* white text on black background */
-      margin: 0;
-      max-width: 700px;
+    .hero-circle2 {
+      position:absolute; right:-60px; top:0;
+      width:460px; height:460px; border-radius:50%;
+      border:1px solid rgba(201,168,76,0.08);
     }
-
-    /* Make parts of the text bold or lighter */
-    .site-header p .bold {
-      font-weight: 700;
+    .hero-slash {
+      position:absolute; bottom:-2px; left:0; right:0; height:120px;
+      background: var(--cream);
+      clip-path: polygon(0 80%, 100% 0%, 100% 100%, 0% 100%);
     }
-
-    .site-header p .light {
-      font-weight: 400;
+    .hero-inner {
+      max-width:1300px; margin:0 auto; padding: 5rem 2.5rem 9rem;
+      display:grid; grid-template-columns:1.1fr 0.9fr; gap:5rem; align-items:center;
+      position:relative; z-index:2; width:100%;
     }
-
-    /* Remove old CTA styles completely */
-    /* .cta { display: none; } */
+    .hero-kicker {
+      display:inline-flex; align-items:center; gap:0.6rem;
+      background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.3);
+      border-radius:100px; padding:0.4rem 1rem;
+      font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+      color:var(--gold-light); margin-bottom:1.75rem;
+    }
+    .hero-kicker-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+    .hero h1 {
+      font-family:'Cormorant Garamond',serif;
+      font-size: clamp(3.2rem, 5.5vw, 5.5rem); font-weight:700;
+      color:var(--white); line-height:1.0;
+      margin-bottom:1.75rem; letter-spacing:-0.02em;
+    }
+    .hero h1 em { color:var(--gold-light); font-style:italic; }
+    .hero h1 span { color:var(--forest-light); }
+    .hero-sub {
+      font-size:1.05rem; color:rgba(253,250,244,0.6);
+      margin-bottom:2.75rem; max-width:480px; line-height:1.75; font-weight:300;
+    }
+    .btn-group { display:flex; gap:1rem; flex-wrap:wrap; }
+    .btn-primary {
+      background:var(--terracotta); color:var(--white);
+      padding:1rem 2.25rem; border-radius:100px; text-decoration:none;
+      font-weight:600; font-size:0.82rem; letter-spacing:0.04em; text-transform:uppercase;
+      transition:all 0.2s; display:inline-block;
+    }
+    .btn-primary:hover { background:var(--mid-brown); transform:translateY(-2px); }
+    .btn-ghost {
+      border:1.5px solid rgba(253,250,244,0.22); color:rgba(253,250,244,0.75);
+      padding:1rem 2.25rem; border-radius:100px; text-decoration:none;
+      font-weight:500; font-size:0.82rem; letter-spacing:0.04em; text-transform:uppercase;
+      transition:all 0.2s; display:inline-block;
+    }
+    .btn-ghost:hover { border-color:var(--gold); color:var(--gold-light); }
+    .hero-panel {
+      background:rgba(253,250,244,0.05); border:1px solid rgba(253,250,244,0.09);
+      border-radius:24px; padding:2.5rem; backdrop-filter:blur(6px);
+    }
+    .hero-panel-title {
+      font-size:0.7rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+      color:var(--gold); margin-bottom:2rem;
+    }
+    .hero-stat { margin-bottom:1.75rem; padding-bottom:1.75rem; border-bottom:1px solid rgba(253,250,244,0.07); }
+    .hero-stat:last-child { margin-bottom:0; padding-bottom:0; border-bottom:none; }
+    .hero-stat-num {
+      font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:700;
+      color:var(--gold-light); line-height:1; margin-bottom:0.3rem;
+    }
+    .hero-stat-label { font-size:0.82rem; color:rgba(253,250,244,0.45); font-weight:300; }
+ 
+    .marquee-strip { background:var(--forest); padding:0.9rem 0; overflow:hidden; }
+    .marquee-track { display:flex; animation:marquee 32s linear infinite; white-space:nowrap; }
+    .marquee-item {
+      display:inline-flex; align-items:center; gap:1.5rem; padding:0 2.5rem;
+      font-size:0.76rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+      color:rgba(253,250,244,0.8);
+    }
+    .marquee-dot { width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+ 
+    .solutions { background:var(--cream); padding:7rem 2.5rem; }
+    .solutions-inner { max-width:1300px; margin:0 auto; }
+    .solutions-header {
+      display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:end; margin-bottom:4rem;
+    }
+    .section-kicker {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      font-size:0.7rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase;
+      color:var(--forest);
+    }
+    .section-kicker::before { content:''; display:block; width:24px; height:2px; background:var(--forest); flex-shrink:0; }
+    .section-title {
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(2.2rem, 3.5vw, 3.5rem); font-weight:700;
+      color:var(--deep-brown); line-height:1.1; letter-spacing:-0.01em;
+    }
+    .section-title em { color:var(--forest); font-style:italic; }
+    .section-desc { font-size:1rem; color:var(--text-muted); font-weight:300; line-height:1.8; }
+    .solutions-link {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      color:var(--forest); font-weight:600; font-size:0.84rem; text-decoration:none;
+      margin-top:1.5rem; border-bottom:1.5px solid var(--forest-pale); padding-bottom:2px;
+      transition:border-color 0.2s;
+    }
+    .solutions-link:hover { border-color:var(--forest); }
+ 
+    .services-grid {
+      display:grid; grid-template-columns:1.4fr 1fr 1fr; grid-template-rows:auto auto; gap:1.5rem;
+    }
+    .svc-card { border-radius:20px; padding:2.5rem; position:relative; overflow:hidden; transition:transform 0.25s; }
+    .svc-card:hover { transform:translateY(-4px); }
+    .svc-card.featured { background:var(--deep-brown); grid-row:1/3; display:flex; flex-direction:column; justify-content:space-between; }
+    .svc-card.light { background:var(--white); border:1px solid var(--border); }
+    .svc-card.forest-bg { background:var(--forest); }
+    .svc-card.terra-bg { background:var(--terracotta); }
+    .svc-card.sand-bg { background:var(--cream-dark); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+    .svc-tag { font-size:0.7rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1.5rem; display:inline-block; }
+    .svc-tag.gold { color:var(--gold); }
+    .svc-tag.muted { color:var(--text-muted); }
+    .svc-tag.faded { color:rgba(253,250,244,0.6); }
+    .svc-num {
+      font-family:'Cormorant Garamond',serif; font-size:5rem; font-weight:700;
+      line-height:1; opacity:0.1; position:absolute; right:1.5rem; top:1.5rem;
+    }
+    .svc-num.dk { color:var(--deep-brown); }
+    .svc-num.wh { color:var(--white); }
+    .svc-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:1.5rem; }
+    .svc-icon.dk { background:rgba(253,250,244,0.08); }
+    .svc-icon.pale { background:var(--forest-pale); }
+    .svc-icon.wh { background:rgba(253,250,244,0.18); }
+    .svc-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; line-height:1.2; margin-bottom:0.75rem; }
+    .svc-card.featured h3 { font-size:2rem; color:var(--white); }
+    .svc-card.light h3 { color:var(--deep-brown); }
+    .svc-card.forest-bg h3, .svc-card.terra-bg h3 { color:var(--white); }
+    .svc-card p { font-size:0.9rem; line-height:1.7; font-weight:300; }
+    .svc-card.featured p { color:rgba(253,250,244,0.55); }
+    .svc-card.light p { color:var(--text-muted); }
+    .svc-card.forest-bg p, .svc-card.terra-bg p { color:rgba(253,250,244,0.7); }
+    .svc-big-stat {
+      font-family:'Cormorant Garamond',serif; font-size:4.5rem; font-weight:700;
+      color:var(--gold-light); line-height:1; margin-top:2rem;
+    }
+    .svc-big-stat small { font-size:1.2rem; font-weight:400; color:rgba(253,250,244,0.4); }
+    .svc-learn {
+      display:inline-flex; align-items:center; gap:0.4rem;
+      font-size:0.78rem; font-weight:600; letter-spacing:0.05em; text-transform:uppercase;
+      text-decoration:none; margin-top:2rem;
+    }
+ 
+    .why-section { background:var(--white); padding:7rem 2.5rem; }
+    .why-inner { max-width:1300px; margin:0 auto; }
+    .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+    .pull-quote { background:var(--deep-brown); border-radius:24px; padding:3.5rem; position:relative; overflow:hidden; }
+    .pull-quote::before {
+      content:'\201C'; position:absolute; top:-20px; left:2rem;
+      font-family:'Cormorant Garamond',serif; font-size:14rem; font-weight:700;
+      color:rgba(201,168,76,0.1); line-height:1;
+    }
+    .pull-quote-text {
+      font-family:'Cormorant Garamond',serif; font-size:1.65rem;
+      font-weight:400; font-style:italic; color:var(--white); line-height:1.55;
+      position:relative; z-index:1; margin-bottom:2rem;
+    }
+    .pull-quote-author strong { display:block; font-size:0.92rem; font-weight:600; color:var(--gold-light); margin-bottom:0.2rem; }
+    .pull-quote-author span { font-size:0.82rem; color:rgba(253,250,244,0.4); }
+    .why-points { display:flex; flex-direction:column; gap:1.75rem; }
+    .why-point { display:flex; gap:1.25rem; align-items:flex-start; }
+    .why-point-icon { width:44px; height:44px; border-radius:12px; background:var(--forest-pale); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-top:2px; }
+    .why-point h4 { font-size:1rem; color:var(--deep-brown); margin-bottom:0.35rem; font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; }
+    .why-point p { font-size:0.88rem; color:var(--text-muted); font-weight:300; line-height:1.65; }
+ 
+    .impact-band { background:var(--forest); padding:5rem 2.5rem; position:relative; overflow:hidden; }
+    .impact-band::before {
+      content:''; position:absolute; inset:0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size:32px 32px;
+    }
+    .impact-inner { max-width:1300px; margin:0 auto; position:relative; z-index:1; }
+    .impact-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:4rem; }
+    .impact-header h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3.5vw,3rem); font-weight:700; color:var(--white); line-height:1.1; max-width:480px; }
+    .impact-header a { color:var(--gold-light); font-size:0.8rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid rgba(201,168,76,0.3); padding-bottom:2px; }
+    .impact-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5px; }
+    .impact-stat { background:rgba(253,250,244,0.05); border:1px solid rgba(253,250,244,0.07); padding:2.5rem 2rem; border-radius:4px; }
+    .impact-stat:first-child { border-radius:20px 4px 4px 20px; }
+    .impact-stat:last-child { border-radius:4px 20px 20px 4px; }
+    .impact-stat-num { font-family:'Cormorant Garamond',serif; font-size:3.5rem; font-weight:700; color:var(--gold-light); line-height:1; margin-bottom:0.4rem; }
+    .impact-stat-label { font-size:0.8rem; color:rgba(253,250,244,0.45); font-weight:300; }
+ 
+    .founder-strip { background:var(--cream); padding:7rem 2.5rem; }
+    .founder-inner { max-width:1300px; margin:0 auto; }
+    .founder-grid { display:grid; grid-template-columns:1fr 2fr; gap:4rem; align-items:center; margin-top:3rem; }
+    .founder-portrait { background:var(--mid-brown); border-radius:24px; padding:3rem 2.5rem; text-align:center; position:relative; overflow:hidden; }
+    .founder-portrait::before { content:''; position:absolute; bottom:0; left:0; right:0; height:40%; background:rgba(0,0,0,0.2); }
+    .founder-initials { width:100px; height:100px; border-radius:50%; background:var(--gold); margin:0 auto 1.5rem; display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:700; color:var(--deep-brown); position:relative; z-index:1; }
+    .founder-name { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:700; color:var(--white); position:relative; z-index:1; }
+    .founder-role { font-size:0.78rem; color:rgba(253,250,244,0.5); margin-top:0.3rem; position:relative; z-index:1; font-weight:300; }
+    .founder-content h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,3vw,2.8rem); font-weight:700; color:var(--deep-brown); line-height:1.15; margin-bottom:1.25rem; }
+    .founder-content p { color:var(--text-muted); font-weight:300; line-height:1.85; margin-bottom:1rem; }
+    .expertise-tags { display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.5rem; }
+    .expertise-tag { background:var(--white); border:1px solid var(--border); border-radius:100px; padding:0.4rem 1rem; font-size:0.78rem; color:var(--mid-brown); font-weight:500; }
+ 
+    .cta-band { background:var(--deep-brown); padding:8rem 2.5rem; position:relative; overflow:hidden; text-align:center; }
+    .cta-band::before {
+      content:''; position:absolute; inset:0;
+      background-image: radial-gradient(circle, rgba(201,168,76,0.1) 1px, transparent 1px);
+      background-size:36px 36px;
+    }
+    .cta-band-inner { max-width:700px; margin:0 auto; position:relative; z-index:1; }
+    .cta-kicker { font-size:0.7rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:1.25rem; }
+    .cta-band h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.5rem,4.5vw,4rem); font-weight:700; color:var(--white); line-height:1.05; margin-bottom:1.25rem; letter-spacing:-0.01em; }
+    .cta-band h2 em { color:var(--gold-light); font-style:italic; }
+    .cta-band p { color:rgba(253,250,244,0.5); font-weight:300; margin-bottom:2.75rem; font-size:1rem; }
+    .cta-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .btn-gold { background:var(--gold); color:var(--deep-brown); padding:1rem 2.5rem; border-radius:100px; text-decoration:none; font-weight:700; font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; transition:all 0.2s; display:inline-block; }
+    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); }
+ 
+    footer { background:var(--deep-brown); border-top:1px solid rgba(201,168,76,0.12); color:rgba(253,250,244,0.5); padding:4rem 2.5rem 2.5rem; }
+    .footer-inner { max-width:1300px; margin:0 auto; }
+    .footer-top { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(253,250,244,0.07); margin-bottom:2rem; }
+    .footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.75rem; font-weight:700; color:var(--white); margin-bottom:0.6rem; }
+    .footer-logo span { color:var(--gold); }
+    .footer-tagline { font-size:0.82rem; color:rgba(253,250,244,0.35); line-height:1.7; font-weight:300; }
+    .footer-col h4 { font-size:0.68rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(253,250,244,0.35); margin-bottom:1.25rem; }
+    .footer-col a { display:block; color:rgba(253,250,244,0.55); text-decoration:none; font-size:0.88rem; font-weight:300; margin-bottom:0.6rem; transition:color 0.2s; }
+    .footer-col a:hover { color:var(--gold-light); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+    .footer-copy { font-size:0.78rem; color:rgba(253,250,244,0.28); }
+ 
+    @media(max-width:900px) {
+      .hero-inner { grid-template-columns:1fr; }
+      .solutions-header { grid-template-columns:1fr; }
+      .services-grid { grid-template-columns:1fr 1fr; }
+      .svc-card.featured { grid-row:auto; }
+      .why-grid { grid-template-columns:1fr; }
+      .impact-stats { grid-template-columns:1fr 1fr; }
+      .impact-header { flex-direction:column; align-items:flex-start; gap:1rem; }
+      .founder-grid { grid-template-columns:1fr; }
+      .footer-top { grid-template-columns:1fr 1fr; }
+    }
+    @media(max-width:600px) {
+      .services-grid { grid-template-columns:1fr; }
+      .nav-links { display:none; }
+    }
   </style>
 </head>
-
 <body>
-<div style="padding:20px; display:flex; justify-content:space-between; align-items:center;">
-    <div style="font-weight:bold; letter-spacing:2px;">HELLOTOMMOROW</div>
+ 
+<div id="nav-placeholder"></div>
+ 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-circle"></div>
+  <div class="hero-circle2"></div>
+  <div class="hero-inner">
     <div>
-        <a href="index.html" style="color:white; margin-right:20px; text-decoration:none;">Home</a>
-        <a href="about.html" style="color:white; text-decoration:none;">About</a>
+      <div class="hero-kicker">
+        <div class="hero-kicker-dot"></div>
+        Cape Town, South Africa
+      </div>
+      <h1>Energy &amp; <em>Water</em><br>Efficiency<br><span>That Pays Off</span></h1>
+      <p class="hero-sub">Smart, measurable solutions that cut costs, save resources, and build a sustainable future — for businesses and buildings across South Africa.</p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn-primary">Request a Quote</a>
+        <a href="contact.html#audit" class="btn-ghost">Book an Audit</a>
+      </div>
     </div>
+    <div class="hero-panel">
+      <div class="hero-panel-title">Our Impact at a Glance</div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">18.5 GWh</div>
+        <div class="hero-stat-label">Verified energy savings delivered</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">10+ yrs</div>
+        <div class="hero-stat-label">Industry experience in South Africa</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">Up to 60%</div>
+        <div class="hero-stat-label">Water reduction with our devices</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-slash"></div>
+</section>
+ 
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="marquee-dot"></span>Water Saving Devices</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Energy Management Systems</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Energy &amp; Water Audits</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Sustainability Advisory</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>ESG Reporting</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>IoT Monitoring</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Carbon Footprint Analysis</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>ROI Modelling</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Water Saving Devices</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Energy Management Systems</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Energy &amp; Water Audits</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Sustainability Advisory</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>ESG Reporting</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>IoT Monitoring</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Carbon Footprint Analysis</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>ROI Modelling</span>
+  </div>
 </div>
-  <header class="site-header">
-    <img src="8.png" alt="HELLOTOMMOROW logo" class="logo">
-
-    <p>
-      <span class="bold">Building tomorrow</span> <span class="light">through innovation, impact, and purpose.</span>
-    </p>
-  </header>
-
+ 
+<!-- SOLUTIONS -->
+<section class="solutions">
+  <div class="solutions-inner">
+    <div class="solutions-header">
+      <div>
+        <div class="section-kicker" style="margin-bottom:1rem;">What We Do</div>
+        <h2 class="section-title">Practical Solutions<br>for <em>Real Savings</em></h2>
+      </div>
+      <div>
+        <p class="section-desc">We transform buildings and businesses with end-to-end efficiency solutions — from audits and smart devices to full energy management systems and sustainability strategy.</p>
+        <a href="services.html" class="solutions-link">Explore all services →</a>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card featured">
+        <div>
+          <div class="svc-tag gold">Service A</div>
+          <div class="svc-num wh">A</div>
+          <div class="svc-icon dk">💧</div>
+          <h3>Water Saving Devices</h3>
+          <p>Reduce water consumption dramatically without compromising comfort. Low-flow showerheads, tap aerators, smart controls, and leak detection — supplied and installed.</p>
+          <p style="margin-top:0.75rem;">Ideal for hotels, student housing, hostels, gyms, and residential estates.</p>
+        </div>
+        <div>
+          <div class="svc-big-stat">60%<small> reduction</small></div>
+          <a href="services.html" class="svc-learn" style="color:var(--gold-light);">Learn more →</a>
+        </div>
+      </div>
+      <div class="svc-card forest-bg">
+        <div class="svc-tag faded">Service B</div>
+        <div class="svc-num wh">B</div>
+        <div class="svc-icon wh">⚡</div>
+        <h3>Energy Management Systems</h3>
+        <p>IoT-enabled smart metering, real-time dashboards, and anomaly detection. Cut electricity costs by 10–40%.</p>
+        <a href="services.html" class="svc-learn" style="color:var(--gold-light);">Learn more →</a>
+      </div>
+      <div class="svc-card light">
+        <div class="svc-tag muted">Service C</div>
+        <div class="svc-num dk">C</div>
+        <div class="svc-icon pale">📋</div>
+        <h3>Energy &amp; Water Audits</h3>
+        <p>Full baseline assessment, load profiling, savings modelling, and an actionable implementation roadmap.</p>
+        <a href="services.html" class="svc-learn" style="color:var(--forest);">Learn more →</a>
+      </div>
+      <div class="svc-card terra-bg">
+        <div class="svc-tag faded">Service D</div>
+        <div class="svc-num wh">D</div>
+        <div class="svc-icon wh">🌿</div>
+        <h3>Sustainability Advisory</h3>
+        <p>ESG reporting, carbon footprint analysis, green building compliance, and utility bill audits.</p>
+        <a href="services.html" class="svc-learn" style="color:rgba(253,250,244,0.8);">Learn more →</a>
+      </div>
+      <div class="svc-card sand-bg">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:var(--mid-brown);margin-bottom:0.5rem;">Turnkey</div>
+        <p style="font-size:0.86rem;color:var(--text-muted);">Audit → Supply → Install → Monitor → Report</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- WHY IT MATTERS -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="why-grid">
+      <div class="pull-quote">
+        <div class="pull-quote-text">"Sustainability isn't just about the environment — it's about empowering businesses and communities to thrive with less."</div>
+        <div class="pull-quote-author">
+          <strong>Tshikane Abel Namuramba</strong>
+          <span>Founder, HelloTommorow (Pty) Ltd</span>
+        </div>
+      </div>
+      <div>
+        <div class="section-kicker" style="margin-bottom:1rem;">Why It Matters</div>
+        <h2 class="section-title" style="margin-bottom:2rem;">South Africa's<br><em>Costs Are Rising.</em><br>We Can Help.</h2>
+        <div class="why-points">
+          <div class="why-point">
+            <div class="why-point-icon">💸</div>
+            <div>
+              <h4>Rising tariffs and water scarcity</h4>
+              <p>Eskom and municipal tariff hikes are eroding margins. We put money back on your bottom line.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-point-icon">📊</div>
+            <div>
+              <h4>Sustainability reporting requirements</h4>
+              <p>ESG compliance is no longer optional. We make it measurable, documented, and manageable.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-point-icon">🔋</div>
+            <div>
+              <h4>Operational risk from load shedding</h4>
+              <p>Smart monitoring and efficiency upgrades reduce your exposure and improve energy resilience.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-point-icon">🏗️</div>
+            <div>
+              <h4>Asset value and building performance</h4>
+              <p>Energy-efficient buildings attract better tenants and command higher valuations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- IMPACT -->
+<section class="impact-band">
+  <div class="impact-inner">
+    <div class="impact-header">
+      <h2>A Decade of<br>Measurable Impact</h2>
+      <a href="case-studies.html">View case studies →</a>
+    </div>
+    <div class="impact-stats">
+      <div class="impact-stat">
+        <div class="impact-stat-num">18.5 GWh</div>
+        <div class="impact-stat-label">Verified energy savings</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-stat-num">10+</div>
+        <div class="impact-stat-label">Years of industry experience</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-stat-num">Up to 60%</div>
+        <div class="impact-stat-label">Water reduction achievable</div>
+      </div>
+      <div class="impact-stat">
+        <div class="impact-stat-num">Up to 40%</div>
+        <div class="impact-stat-label">Electricity cost reduction possible</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- FOUNDER -->
+<section class="founder-strip">
+  <div class="founder-inner">
+    <div class="section-kicker">Meet the Founder</div>
+    <div class="founder-grid">
+      <div class="founder-portrait">
+        <div class="founder-initials">TAN</div>
+        <div class="founder-name">Tshikane Abel Namuramba</div>
+        <div class="founder-role">Founder &amp; Director — HelloTommorow (Pty) Ltd</div>
+      </div>
+      <div class="founder-content">
+        <h2>A Sustainability Strategist Committed to Real Change</h2>
+        <p>Abel built his expertise leading energy and water efficiency projects across South Africa's most demanding sites — universities, hotels, government buildings, and industrial facilities — with Isiphiwo Fusion.</p>
+        <p>That proven track record — 18.5 GWh of independently verified savings — is the foundation HelloTommorow is built on. His mission: make sustainability accessible, practical, and impactful for every organisation.</p>
+        <div class="expertise-tags">
+          <span class="expertise-tag">Energy Efficiency</span>
+          <span class="expertise-tag">Water Saving Technologies</span>
+          <span class="expertise-tag">Smart Buildings</span>
+          <span class="expertise-tag">Environmental Campaigns</span>
+          <span class="expertise-tag">Project Management</span>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="about.html" class="solutions-link">Read the full story →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div class="cta-kicker">Ready to Start Saving?</div>
+    <h2>Let's Build a<br><em>Sustainable Future</em><br>Together</h2>
+    <p>We're ready to help your organisation cut water and energy costs — starting with a free consultation or audit.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn-gold">Request a Quote</a>
+      <a href="contact.html#audit" class="btn-ghost">Book an Audit</a>
+    </div>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Hello<span>Tommorow</span></div>
+        <p class="footer-tagline">Energy Efficiency · Water Management · Sustainability<br>Cape Town, South Africa</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="why-us.html">Why Choose Us</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="csi.html">CSI Programme</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="services.html">Water Saving Devices</a>
+        <a href="services.html">Energy Management</a>
+        <a href="services.html">Audits</a>
+        <a href="services.html">Sustainability Advisory</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+27696314858">+27 69 631 4858</a>
+        <a href="https://wa.me/27696314858">WhatsApp Us</a>
+        <a href="contact.html">Send a Message</a>
+        <a href="contact.html">Get a Quote</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 HelloTommorow (Pty) Ltd — Cape Town, South Africa</div>
+      <div class="footer-copy" style="color:rgba(253,250,244,0.18);">Website by HelloTommorow</div>
+    </div>
+  </div>
+</footer>
+ 
+<script src="nav.js"></script>
 </body>
 </html>
