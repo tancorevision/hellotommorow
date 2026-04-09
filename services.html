@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Services | HelloTommorow</title>
-  <link rel="stylesheet" href="style.css" />
-  <script>window.ACTIVE_PAGE = 'services.html';</script>
+  <link rel="stylesheet" href="style.css"/>
+  <script>window.ACTIVE_PAGE='services.html';</script>
 </head>
 <body>
- 
 <div id="nav-placeholder"></div>
- 
 <div class="page-hero">
   <div class="page-hero-inner">
-    <p class="eyebrow">Our Services</p>
-    <h1>End-to-End Efficiency Solutions</h1>
+    <div class="eyebrow coral">Our Services</div>
+    <h1>End-to-End<br><span style="background:linear-gradient(90deg,var(--coral),var(--magenta),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Efficiency Solutions</span></h1>
     <p>From audits and products to full EMS installations and sustainability advisory — we cover every dimension of your energy and water footprint.</p>
   </div>
 </div>
  
-<section style="padding:5rem 2rem;">
-  <div class="section-inner">
+<section style="background:var(--bg);">
+  <div class="inner">
  
-    <!-- Water -->
-    <div class="service-block">
-      <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
-        <div class="card-icon">💧</div>
+    <div class="svc-block">
+      <div class="svc-block-header">
+        <div class="icon-chip" style="border-color:rgba(255,77,109,0.3);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C12 2 5 10 5 14a7 7 0 0014 0c0-4-7-12-7-12z"/></svg>
+        </div>
         <div>
-          <p style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); font-weight:500; margin-bottom:0.2rem;">Service A</p>
-          <h3 style="margin:0;">Water Saving Devices</h3>
+          <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--coral);margin-bottom:0.25rem;">Service A</div>
+          <h3>Water Saving Devices</h3>
+          <p class="tagline">Reduce water consumption by up to 60% without compromising comfort.</p>
         </div>
       </div>
-      <p class="tagline">Reduce water consumption by up to 60% without compromising comfort.</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
         <div>
-          <p style="font-size:0.88rem; font-weight:500; color:var(--deep-brown); margin-bottom:0.5rem;">Products include:</p>
-          <ul class="feature-list">
+          <p style="font-size:0.8rem;font-weight:500;color:var(--white70);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.06em;">Products include:</p>
+          <ul class="feat-list">
             <li>Low-flow energy-saving showerheads (6 L/min)</li>
             <li>Vandal-resistant showerheads for high-usage sites</li>
             <li>Tap aerators &amp; flow regulators</li>
@@ -44,32 +42,33 @@
           </ul>
         </div>
         <div>
-          <div class="ideal-for">
-            <strong>Ideal for:</strong><br>
-            Hotels, student housing, hostels, industrial change rooms, gyms, residential estates.
+          <div class="ideal-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            Hotels, student housing, hostels, gyms, industrial change rooms, residential estates
           </div>
-          <div style="margin-top:1rem; background:var(--forest-pale); border-radius:10px; padding:1rem;">
-            <div style="font-family:'Fraunces',serif; font-size:2rem; font-weight:700; color:var(--forest);">60%</div>
-            <div style="font-size:0.85rem; color:var(--text-muted);">Water reduction achievable</div>
+          <div style="margin-top:1.5rem;background:rgba(255,77,109,0.06);border:1px solid rgba(255,77,109,0.15);border-radius:14px;padding:1.5rem;text-align:center;">
+            <div style="font-family:'Blanka','Poppins',sans-serif;font-size:3rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">60%</div>
+            <div style="font-size:0.8rem;color:var(--white40);">Water reduction achievable</div>
           </div>
         </div>
       </div>
     </div>
  
-    <!-- EMS -->
-    <div class="service-block">
-      <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
-        <div class="card-icon">⚡</div>
+    <div class="svc-block">
+      <div class="svc-block-header">
+        <div class="icon-chip" style="border-color:rgba(224,64,251,0.3);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--magenta)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
         <div>
-          <p style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); font-weight:500; margin-bottom:0.2rem;">Service B</p>
-          <h3 style="margin:0;">Energy Management Systems (EMS)</h3>
+          <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--magenta);margin-bottom:0.25rem;">Service B</div>
+          <h3>Energy Management Systems (EMS)</h3>
+          <p class="tagline">Take control of your energy usage with real-time monitoring.</p>
         </div>
       </div>
-      <p class="tagline">Take control of your energy usage with real-time monitoring.</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
         <div>
-          <p style="font-size:0.88rem; font-weight:500; color:var(--deep-brown); margin-bottom:0.5rem;">Features:</p>
-          <ul class="feature-list">
+          <p style="font-size:0.8rem;font-weight:500;color:var(--white70);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.06em;">Features:</p>
+          <ul class="feat-list" style="--arrow-col:var(--magenta);">
             <li>Smart electricity &amp; water metering</li>
             <li>IoT-enabled monitoring dashboards</li>
             <li>Consumption alerts &amp; anomaly detection</li>
@@ -78,34 +77,35 @@
           </ul>
         </div>
         <div>
-          <p style="font-size:0.88rem; font-weight:500; color:var(--deep-brown); margin-bottom:0.5rem;">Benefits:</p>
-          <ul class="feature-list">
+          <p style="font-size:0.8rem;font-weight:500;color:var(--white70);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.06em;">Benefits:</p>
+          <ul class="feat-list">
             <li>Reduce electricity costs by 10–40%</li>
             <li>Identify wastage quickly</li>
             <li>Improve compliance and reporting</li>
           </ul>
-          <div style="margin-top:1rem; background:var(--forest-pale); border-radius:10px; padding:1rem;">
-            <div style="font-family:'Fraunces',serif; font-size:2rem; font-weight:700; color:var(--forest);">10–40%</div>
-            <div style="font-size:0.85rem; color:var(--text-muted);">Electricity cost reduction</div>
+          <div style="margin-top:1.5rem;background:rgba(224,64,251,0.06);border:1px solid rgba(224,64,251,0.15);border-radius:14px;padding:1.5rem;text-align:center;">
+            <div style="font-family:'Blanka','Poppins',sans-serif;font-size:3rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">10–40%</div>
+            <div style="font-size:0.8rem;color:var(--white40);">Electricity cost reduction</div>
           </div>
         </div>
       </div>
     </div>
  
-    <!-- Audits -->
-    <div class="service-block">
-      <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
-        <div class="card-icon">📋</div>
+    <div class="svc-block">
+      <div class="svc-block-header">
+        <div class="icon-chip" style="border-color:rgba(0,229,204,0.3);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
         <div>
-          <p style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); font-weight:500; margin-bottom:0.2rem;">Service C</p>
-          <h3 style="margin:0;">Energy &amp; Water Audits</h3>
+          <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.25rem;">Service C</div>
+          <h3>Energy &amp; Water Audits</h3>
+          <p class="tagline">A complete assessment to uncover inefficiencies and hidden savings.</p>
         </div>
       </div>
-      <p class="tagline">A complete assessment to uncover inefficiencies and hidden savings.</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
         <div>
-          <p style="font-size:0.88rem; font-weight:500; color:var(--deep-brown); margin-bottom:0.5rem;">Audit includes:</p>
-          <ul class="feature-list">
+          <p style="font-size:0.8rem;font-weight:500;color:var(--white70);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.06em;">Audit includes:</p>
+          <ul class="feat-list">
             <li>Baseline consumption analysis</li>
             <li>Load profiling</li>
             <li>Water usage mapping</li>
@@ -115,28 +115,28 @@
           </ul>
         </div>
         <div>
-          <div class="ideal-for">
-            <strong>Outcome:</strong><br>
-            Clear, actionable steps to reduce costs and improve building performance — with a detailed ROI model.
+          <div class="ideal-pill" style="color:var(--teal);background:rgba(0,229,204,0.06);border-color:rgba(0,229,204,0.2);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Clear, actionable steps to reduce costs and improve building performance
           </div>
         </div>
       </div>
     </div>
  
-    <!-- Advisory -->
-    <div class="service-block">
-      <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1rem;">
-        <div class="card-icon">🌿</div>
+    <div class="svc-block">
+      <div class="svc-block-header">
+        <div class="icon-chip" style="border-color:rgba(255,112,67,0.3);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
         <div>
-          <p style="font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); font-weight:500; margin-bottom:0.2rem;">Service D</p>
-          <h3 style="margin:0;">Sustainability &amp; Advisory Services</h3>
+          <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);margin-bottom:0.25rem;">Service D</div>
+          <h3>Sustainability &amp; Advisory Services</h3>
+          <p class="tagline">Holistic guidance for organisations moving toward a greener future.</p>
         </div>
       </div>
-      <p class="tagline">Holistic guidance for organisations moving toward a greener future.</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
         <div>
-          <p style="font-size:0.88rem; font-weight:500; color:var(--deep-brown); margin-bottom:0.5rem;">Advisory includes:</p>
-          <ul class="feature-list">
+          <ul class="feat-list">
             <li>ESG reporting support</li>
             <li>Sustainability strategy development</li>
             <li>Carbon footprint analysis</li>
@@ -146,27 +146,24 @@
           </ul>
         </div>
         <div>
-          <div class="ideal-for">
-            <strong>Ideal for:</strong><br>
-            Businesses, schools, government, industry, and property developers seeking a structured sustainability strategy.
+          <div class="ideal-pill" style="color:var(--orange);background:rgba(255,112,67,0.06);border-color:rgba(255,112,67,0.2);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            Businesses, schools, government, industry, property developers
           </div>
         </div>
       </div>
     </div>
  
-    <!-- CTA -->
-    <div style="text-align:center; margin-top:3rem; padding:3rem; background:var(--cream); border-radius:24px;">
-      <h3 style="font-family:'Fraunces',serif; font-size:1.8rem; color:var(--deep-brown); margin-bottom:0.75rem;">Ready to Cut Costs and Save Resources?</h3>
-      <p style="color:var(--text-muted); margin-bottom:2rem;">Let's start with an audit or a free consultation.</p>
-      <div class="btn-group" style="justify-content:center;">
-        <a href="contact.html" class="btn-primary" style="background:var(--forest);">Request a Quote</a>
-        <a href="contact.html#audit" class="btn-primary" style="background:var(--terracotta);">Book an Audit</a>
+    <div style="text-align:center;margin-top:3rem;padding:3.5rem;background:rgba(255,255,255,0.03);border:1px solid var(--glass-border);border-radius:24px;">
+      <h3 style="font-size:1.8rem;color:var(--white);margin-bottom:0.75rem;">Ready to Cut Costs?</h3>
+      <p style="color:var(--white70);margin-bottom:2rem;font-weight:300;">Start with an audit or a free consultation.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-grad">Request a Quote</a>
+        <a href="contact.html" class="btn btn-glass">Book an Audit</a>
       </div>
     </div>
- 
   </div>
 </section>
- 
 <div id="footer-placeholder"></div>
 <script src="nav.js"></script>
 </body>
