@@ -1,113 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | HelloTommorow</title>
-  <link rel="stylesheet" href="style.css" />
-  <script>window.ACTIVE_PAGE = 'about.html';</script>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>About | HelloTommorow</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script>window.ACTIVE_PAGE='about.html';</script>
 </head>
 <body>
- 
 <div id="nav-placeholder"></div>
  
 <div class="page-hero">
   <div class="page-hero-inner">
-    <p class="eyebrow">About Us</p>
+    <div class="eyebrow coral">About Us</div>
     <h1>Who We Are</h1>
     <p>HelloTommorow (Pty) Ltd is a Cape Town–based Energy &amp; Water Efficiency company helping organisations reduce operational costs and achieve their sustainability goals.</p>
   </div>
 </div>
  
-<!-- WHO WE ARE -->
-<section style="padding:5rem 2rem;">
-  <div class="section-inner">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start;">
+<section style="background:var(--bg);">
+  <div class="inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
       <div>
-        <p class="section-tag">Our Story</p>
-        <h2 class="section-title">Built on a Decade of Proven Impact</h2>
-        <p style="color:var(--text-muted); margin-bottom:1.25rem;">HelloTommorow combines innovation, practical experience, and data-driven solutions to deliver measurable impact for businesses and communities across South Africa.</p>
-        <p style="color:var(--text-muted); margin-bottom:1.25rem;">We build on the proven track record of Isiphiwo Fusion — a company that achieved more than 18.5 GWh of energy savings across universities, commercial buildings, hotels, and government facilities.</p>
-        <p style="color:var(--text-muted);">This legacy forms the foundation of our mission today: making efficiency accessible and achievable for every organisation.</p>
+        <div class="eyebrow coral">Our Story</div>
+        <h2 class="section-h">Built on a Decade<br>of <span class="grad-text">Proven Impact</span></h2>
+        <p style="color:var(--white70);font-weight:300;line-height:1.8;margin:1.25rem 0 1rem;">We combine innovation, practical experience, and data-driven solutions to deliver measurable impact for businesses and communities across South Africa.</p>
+        <p style="color:var(--white70);font-weight:300;line-height:1.8;margin-bottom:1rem;">We build on the proven track record of Isiphiwo Fusion — a company that achieved more than 18.5 GWh of energy savings across universities, commercial buildings, hotels, and government facilities.</p>
+        <p style="color:var(--white70);font-weight:300;line-height:1.8;">This legacy forms the foundation of our mission today: making efficiency accessible and achievable for every organisation.</p>
       </div>
-      <div>
-        <div class="stats-row" style="grid-template-columns:1fr 1fr; margin:0;">
-          <div class="stat-card">
-            <div class="stat-num">18.5 GWh</div>
-            <div class="stat-label">Verified energy savings</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">10+</div>
-            <div class="stat-label">Years of experience</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">1,000</div>
-            <div class="stat-label">Entrepreneurs to empower by 2027</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">Cape Town</div>
-            <div class="stat-label">Based & proudly South African</div>
-          </div>
-        </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="stat-pill"><div class="stat-num">18.5 GWh</div><div class="stat-label">Verified energy savings</div></div>
+        <div class="stat-pill"><div class="stat-num">10+</div><div class="stat-label">Years of experience</div></div>
+        <div class="stat-pill"><div class="stat-num">1,000</div><div class="stat-label">Entrepreneurs to empower by 2027</div></div>
+        <div class="stat-pill"><div class="stat-num">ZA</div><div class="stat-label">Proudly South African, Cape Town based</div></div>
       </div>
     </div>
   </div>
 </section>
+ 
+<div class="grad-line"></div>
  
 <!-- FOUNDER -->
-<section class="band" style="padding:5rem 2rem;">
-  <div class="section-inner">
-    <div style="display:grid; grid-template-columns:1fr 2fr; gap:3rem; align-items:start;">
+<section style="background:var(--bg2);">
+  <div class="inner">
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;">
       <div>
-        <div style="background:var(--forest); border-radius:24px; padding:2.5rem; text-align:center; color:var(--white);">
-          <div style="width:80px; height:80px; border-radius:50%; background:var(--sand); margin:0 auto 1rem; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:1.8rem; font-weight:700; color:var(--deep-brown);">TAN</div>
-          <h3 style="color:var(--white); font-size:1.2rem; margin-bottom:0.25rem;">Tshikane Abel Namuramba</h3>
-          <p style="color:rgba(253,250,245,0.7); font-size:0.88rem;">Founder &amp; Director</p>
+        <div class="glass-strong" style="padding:2.5rem;text-align:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-1px;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,var(--coral),var(--magenta),transparent);"></div>
+          <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--coral),var(--violet));margin:0 auto 1.25rem;display:flex;align-items:center;justify-content:center;">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div style="font-family:'Blanka','Poppins',sans-serif;font-size:1.1rem;color:var(--white);margin-bottom:0.3rem;">Our Founder</div>
+          <div style="font-size:0.78rem;color:var(--white40);font-weight:300;">Director, HelloTommorow (Pty) Ltd</div>
         </div>
       </div>
       <div>
-        <p class="section-tag">Meet the Founder</p>
-        <h2 class="section-title">A Sustainability Strategist on a Mission</h2>
-        <p style="color:var(--text-muted); margin-bottom:1.5rem;">Abel's mission is simple: make sustainability accessible, practical, and impactful for every business and community across South Africa and beyond.</p>
-        <ul class="feature-list">
-          <li>Energy efficiency strategy and implementation</li>
-          <li>Water saving technologies and rollout</li>
-          <li>Environmental awareness campaigns</li>
-          <li>Smart building solutions</li>
-          <li>Project management across SA's leading institutions</li>
-        </ul>
-        <div class="quote-block" style="margin-top:2rem;">
-          <div class="quote-text" style="font-size:1.15rem;">"Sustainability isn't just about the environment — it's about empowering businesses and communities to thrive with less."</div>
-          <div class="quote-author"><strong>Tshikane Abel Namuramba</strong>Founder, HelloTommorow</div>
+        <div class="eyebrow pink">Meet the Team</div>
+        <h2 class="section-h" style="margin-bottom:1.25rem;">A Sustainability Strategist<br>Committed to <span class="grad-text">Real Change</span></h2>
+        <p style="color:var(--white70);font-weight:300;line-height:1.8;margin-bottom:1rem;">We built our expertise leading energy and water efficiency projects across South Africa's most demanding sites — universities, hotels, government buildings, and industrial facilities — with Isiphiwo Fusion.</p>
+        <p style="color:var(--white70);font-weight:300;line-height:1.8;margin-bottom:1.5rem;">That proven track record — 18.5 GWh of independently verified savings — is the foundation HelloTommorow is built on. Our mission: make sustainability accessible, practical, and impactful for every organisation.</p>
+ 
+        <div style="background:rgba(255,77,109,0.06);border:1px solid rgba(255,77,109,0.15);border-radius:16px;padding:1.5rem;margin-bottom:1.5rem;">
+          <div style="font-size:1.1rem;font-style:italic;color:var(--white70);line-height:1.7;">"Sustainability isn't just about the environment — it's about empowering businesses and communities to thrive with less."</div>
+          <div style="margin-top:0.75rem;font-size:0.8rem;color:var(--coral);">— HelloTommorow founding philosophy</div>
+        </div>
+ 
+        <div class="value-chips">
+          <span class="value-chip" style="border-color:rgba(255,77,109,0.2);color:var(--coral);">Energy Efficiency</span>
+          <span class="value-chip" style="border-color:rgba(224,64,251,0.2);color:var(--magenta);">Water Saving Technologies</span>
+          <span class="value-chip" style="border-color:rgba(0,229,204,0.2);color:var(--teal);">Smart Buildings</span>
+          <span class="value-chip" style="border-color:rgba(255,112,67,0.2);color:var(--orange);">Environmental Campaigns</span>
+          <span class="value-chip">Project Management</span>
         </div>
       </div>
     </div>
   </div>
 </section>
  
+<div class="grad-line"></div>
+ 
 <!-- VISION MISSION VALUES -->
-<section style="padding:5rem 2rem;">
-  <div class="section-inner">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:3rem;">
-      <div style="background:var(--forest); border-radius:20px; padding:2.5rem; color:var(--white);">
-        <p style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--sand); margin-bottom:0.75rem; font-weight:500;">Our Vision</p>
-        <p style="font-family:'Fraunces',serif; font-size:1.2rem; line-height:1.5;">To be Africa's leading provider of innovative, measurable, and scalable Energy &amp; Water Efficiency solutions.</p>
+<section style="background:var(--bg);">
+  <div class="inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;">
+      <div class="glass-strong" style="padding:2.5rem;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--grad);"></div>
+        <div class="eyebrow coral" style="margin-bottom:0.75rem;">Our Vision</div>
+        <p style="font-size:1.1rem;color:var(--white);font-weight:300;line-height:1.6;">To be Africa's leading provider of innovative, measurable, and scalable Energy &amp; Water Efficiency solutions.</p>
       </div>
-      <div style="background:var(--deep-brown); border-radius:20px; padding:2.5rem; color:var(--white);">
-        <p style="font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--sand); margin-bottom:0.75rem; font-weight:500;">Our Mission</p>
-        <p style="font-family:'Fraunces',serif; font-size:1.2rem; line-height:1.5;">To empower businesses and communities with smart, sustainable tools that reduce consumption and save money.</p>
+      <div class="glass-strong" style="padding:2.5rem;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-1px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--violet),var(--teal));"></div>
+        <div class="eyebrow teal" style="margin-bottom:0.75rem;">Our Mission</div>
+        <p style="font-size:1.1rem;color:var(--white);font-weight:300;line-height:1.6;">To empower businesses and communities with smart, sustainable tools that reduce consumption and save money.</p>
       </div>
     </div>
  
-    <p class="section-tag">Our Values</p>
-    <h2 class="section-title">What Drives Everything We Do</h2>
-    <div class="value-list">
-      <div class="value-item"><div class="value-dot"></div><span>Innovation</span></div>
-      <div class="value-item"><div class="value-dot"></div><span>Transparency</span></div>
-      <div class="value-item"><div class="value-dot"></div><span>Impact</span></div>
-      <div class="value-item"><div class="value-dot"></div><span>Community Empowerment</span></div>
-      <div class="value-item"><div class="value-dot"></div><span>Sustainability</span></div>
-      <div class="value-item"><div class="value-dot"></div><span>Excellence</span></div>
+    <div class="eyebrow pink">Our Values</div>
+    <h2 class="section-h" style="margin-bottom:2rem;">What Drives<br><span class="grad-text">Everything We Do</span></h2>
+    <div class="value-chips" style="gap:1rem;">
+      <span class="value-chip" style="padding:0.65rem 1.4rem;border-color:rgba(255,77,109,0.25);color:var(--coral);">Innovation</span>
+      <span class="value-chip" style="padding:0.65rem 1.4rem;border-color:rgba(224,64,251,0.25);color:var(--magenta);">Transparency</span>
+      <span class="value-chip" style="padding:0.65rem 1.4rem;border-color:rgba(0,229,204,0.25);color:var(--teal);">Impact</span>
+      <span class="value-chip" style="padding:0.65rem 1.4rem;border-color:rgba(255,112,67,0.25);color:var(--orange);">Community Empowerment</span>
+      <span class="value-chip" style="padding:0.65rem 1.4rem;">Sustainability</span>
+      <span class="value-chip" style="padding:0.65rem 1.4rem;">Excellence</span>
     </div>
   </div>
 </section>
