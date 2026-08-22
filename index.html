@@ -286,10 +286,10 @@
   }
   .img-tile img {
     width: 100%; height: 100%; object-fit: cover; display: block;
-    filter: brightness(0.72) saturate(1.1);
+    filter: grayscale(100%) contrast(1.05) brightness(0.72);
     transition: transform 0.5s ease, filter 0.4s ease;
   }
-  .img-tile:hover img { transform: scale(1.03); filter: brightness(0.85) saturate(1.2); }
+  .img-tile:hover img { transform: scale(1.03); filter: grayscale(100%) contrast(1.05) brightness(0.85); }
 
   .img-tile-main { height: 440px; }
   .img-col-right { display: flex; flex-direction: column; gap: 1rem; }
@@ -384,7 +384,7 @@
   }
   .intel-image img {
     width: 100%; height: 100%; object-fit: cover;
-    filter: brightness(0.65) saturate(1.2);
+    filter: grayscale(100%) contrast(1.05) brightness(0.65);
   }
   .intel-image::after {
     content: ''; position: absolute; inset: 0;
@@ -408,8 +408,10 @@
   .intel-feature:hover { border-color: rgba(191,191,191,0.3); }
   .intel-feature-icon {
     width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
-    background: rgba(191,191,191,0.1); border: 1px solid rgba(191,191,191,0.2);
-    display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    background: rgba(191,191,191,0.06); border: 1px solid rgba(191,191,191,0.18);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.03em; color: var(--white40);
+    font-family: 'Poppins', sans-serif;
   }
   .intel-feature h4 { font-size: 0.9rem; color: var(--white); margin-bottom: 0.3rem; font-weight: 600; }
   .intel-feature p { font-size: 0.82rem; color: var(--white40); line-height: 1.6; }
@@ -465,7 +467,7 @@
     background: rgba(255,255,255,0.02);
   }
   .geo-card:hover { background: rgba(242,242,242,0.05); border-color: rgba(242,242,242,0.25); transform: translateY(-4px); }
-  .geo-card-flag   { font-size: 2rem; margin-bottom: 0.75rem; }
+  .geo-card-flag   { font-size: 1.3rem; font-weight: 300; letter-spacing: 0.05em; color: var(--white40); margin-bottom: 0.9rem; }
   .geo-card-name   { font-size: 0.82rem; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
   .geo-card-markets{ font-size: 0.7rem; color: var(--white40); line-height: 1.6; }
 
@@ -504,7 +506,7 @@
   .story-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: center; }
 
   .story-image { border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; }
-  .story-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.72) saturate(1.1); }
+  .story-image img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.05) brightness(0.72); }
 
   .tag-pill {
     display: inline-block;
@@ -597,7 +599,7 @@
         <span class="line-grad">&amp; WATER</span>
         <span class="line-teal">SAVING.</span>
       </h1>
-      <p class="hero-sub">We help organisations across Africa use energy and water more intelligently — cutting costs, reducing waste, and building infrastructure that lasts. Backed by world-class data intelligence.</p>
+      <p class="hero-sub">Helping organisations across Africa cut costs and waste — backed by world-class data intelligence.</p>
       <div class="hero-ctas">
         <a href="contact.html" class="btn btn-grad">Request a Quote</a>
         <a href="contact.html" class="btn btn-glass">Book an Audit</a>
@@ -649,16 +651,16 @@
   <div class="image-strip">
     <div class="img-tile img-tile-main">
       <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80&auto=format&fit=crop" alt="Modern energy-efficient building architecture" loading="lazy"/>
-      <div class="img-tile-label">⚡ Energy Saving</div>
+      <div class="img-tile-label">Energy Saving</div>
     </div>
     <div class="img-col-right">
       <div class="img-tile img-tile-sm">
         <img src="https://images.unsplash.com/photo-1697652973421-0d688f661d89?w=800&q=80&auto=format&fit=crop" alt="Modern water-saving showerhead" loading="lazy"/>
-        <div class="img-tile-label">💧 Water Saving</div>
+        <div class="img-tile-label">Water Saving</div>
       </div>
       <div class="img-tile img-tile-sm">
         <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80&auto=format&fit=crop" alt="Data intelligence and smart monitoring" loading="lazy"/>
-        <div class="img-tile-label">🧠 Intelligence</div>
+        <div class="img-tile-label">Intelligence</div>
       </div>
     </div>
   </div>
@@ -673,7 +675,7 @@
         <h2 class="section-h">Practical Solutions<br>for <span class="grad-text">Real Savings</span></h2>
       </div>
       <div>
-        <p style="color:var(--white70);font-weight:300;line-height:1.8;font-size:0.95rem;">We transform buildings and businesses with end-to-end efficiency solutions — from on-site audits and smart devices to full energy management systems and sustainability strategy. Every solution we deliver is measurable, documented, and built to last.</p>
+        <p style="color:var(--white70);font-weight:300;line-height:1.8;font-size:0.95rem;">End-to-end efficiency — audits, devices, and systems built to last.</p>
         <a href="services.html" style="display:inline-flex;align-items:center;gap:0.5rem;color:var(--coral);font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;margin-top:1.25rem;">Explore all services →</a>
       </div>
     </div>
@@ -740,28 +742,27 @@
       <div>
         <div class="eyebrow" style="color:#BFBFBF;">How We Work</div>
         <h2 class="section-h">Intelligence is<br><span style="background:linear-gradient(90deg,#BFBFBF,var(--magenta));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">the Engine</span></h2>
-        <p style="color:var(--white70);font-weight:300;line-height:1.8;font-size:0.95rem;margin-bottom:0.5rem;">We don't just save energy and water — we make every resource accountable. Behind every audit, device, and recommendation is a data intelligence layer that tracks, models, and continuously improves outcomes.</p>
-        <p style="color:var(--white40);font-weight:300;line-height:1.8;font-size:0.88rem;margin-bottom:0;">AI is not our product. It's how we ensure our products actually work — at scale, across borders, over time.</p>
+        <p style="color:var(--white70);font-weight:300;line-height:1.8;font-size:0.95rem;margin-bottom:0;">A data layer behind every audit and device — tracking, modelling, and improving outcomes at scale.</p>
         <div class="intel-features">
           <div class="intel-feature">
-            <div class="intel-feature-icon">📡</div>
+            <div class="intel-feature-icon">01</div>
             <div>
               <h4>Real-Time IoT Monitoring</h4>
-              <p>Live dashboards tracking energy and water consumption across every metered point — anomalies flagged instantly.</p>
+              <p>Live dashboards across every metered point — anomalies flagged instantly.</p>
             </div>
           </div>
           <div class="intel-feature">
-            <div class="intel-feature-icon">🔮</div>
+            <div class="intel-feature-icon">02</div>
             <div>
               <h4>Predictive Analytics</h4>
-              <p>AI-driven forecasting identifies waste patterns, predicts equipment failure, and optimises usage before problems occur.</p>
+              <p>Forecasting that identifies waste and optimises usage before problems occur.</p>
             </div>
           </div>
           <div class="intel-feature">
-            <div class="intel-feature-icon">📊</div>
+            <div class="intel-feature-icon">03</div>
             <div>
               <h4>Automated ESG Reporting</h4>
-              <p>Compliance-ready reports generated automatically — measurable, auditable, and aligned to international frameworks.</p>
+              <p>Compliance-ready reports, generated automatically.</p>
             </div>
           </div>
         </div>
@@ -825,27 +826,27 @@
   </div>
   <div class="geo-markets">
     <div class="geo-card">
-      <div class="geo-card-flag">🇿🇦</div>
+      <div class="geo-card-flag">SA</div>
       <div class="geo-card-name">Southern Africa</div>
       <div class="geo-card-markets">SA · Zimbabwe · Zambia · Namibia · Botswana</div>
     </div>
     <div class="geo-card">
-      <div class="geo-card-flag">🌍</div>
+      <div class="geo-card-flag">EA</div>
       <div class="geo-card-name">East Africa</div>
       <div class="geo-card-markets">Kenya · Tanzania · Uganda · Ethiopia · Rwanda</div>
     </div>
     <div class="geo-card">
-      <div class="geo-card-flag">🌍</div>
+      <div class="geo-card-flag">WA</div>
       <div class="geo-card-name">West Africa</div>
       <div class="geo-card-markets">Nigeria · Ghana · Senegal · Ivory Coast</div>
     </div>
     <div class="geo-card">
-      <div class="geo-card-flag">🌍</div>
+      <div class="geo-card-flag">NA</div>
       <div class="geo-card-name">North Africa</div>
       <div class="geo-card-markets">Egypt · Morocco · Tunisia</div>
     </div>
     <div class="geo-card">
-      <div class="geo-card-flag">🌐</div>
+      <div class="geo-card-flag">+</div>
       <div class="geo-card-name">Beyond Africa</div>
       <div class="geo-card-markets">Middle East · Southeast Asia · Pacific Islands</div>
     </div>
@@ -887,8 +888,8 @@
       <div>
         <div class="eyebrow teal">Our Story</div>
         <h2 class="section-h" style="margin-bottom:1.25rem;">Built on a<br><span class="grad-text">Decade of Proof</span></h2>
-        <p style="color:var(--white70);font-weight:300;line-height:1.8;margin-bottom:1rem;font-size:0.95rem;">We built our expertise leading energy and water efficiency projects across Africa's most demanding sites — universities, hotels, government buildings, and industrial facilities.</p>
-        <p style="color:var(--white70);font-weight:300;line-height:1.8;font-size:0.95rem;">That proven track record — 18.5 GWh of independently verified savings — is the foundation HelloTommorow is built on. Our mission: make sustainability accessible, practical, and impactful for every organisation, everywhere.</p>
+        <p style="color:var(--white70);font-weight:300;line-height:1.8;margin-bottom:1rem;font-size:0.95rem;">Built leading efficiency projects across Africa's most demanding sites — universities, hotels, and industrial facilities.</p>
+        <p style="color:var(--white70);font-weight:300;line-height:1.8;font-size:0.95rem;">18.5 GWh of verified savings is the foundation we're built on.</p>
         <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:0.6rem;">
           <span class="tag-pill" style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);color:var(--coral);">Energy Efficiency</span>
           <span class="tag-pill" style="background:rgba(207,207,207,0.08);border-color:rgba(207,207,207,0.2);color:var(--magenta);">Water Technology</span>

@@ -24,7 +24,7 @@ function renderFooter() {
     <div class="footer-inner">
       <div class="footer-top">
         <div>
-          <a href="index.html"><img src="logo.png" alt="HelloTommorow" class="footer-logo" style="height:28px;margin-bottom:1rem;display:block;"></a>
+          <a href="index.html"><img src="logo.png" alt="HelloTommorow" class="footer-logo" style="height:34px;margin-bottom:1rem;display:block;"></a>
           <p class="footer-tagline">Energy Efficiency &bull; Water Management &bull; Sustainability<br>Cape Town, South Africa</p>
         </div>
         <div class="footer-col">
